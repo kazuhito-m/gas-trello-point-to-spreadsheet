@@ -1,10 +1,21 @@
 import PointOfWeek from "./PointOfWeek";
+import SheetId from "../googlespread/SheetId";
 
 export default class BarndownChart {
     constructor(
         public readonly points: PointOfWeek[],
-        public readonly sheetId: string
+        public readonly sheetId: SheetId
     ) { }
+
+    public nowWeekPoint(): PointOfWeek {
+        const now = new Date();
+        let rangeIn = false;
+        for (const point of this.points) {
+            if (point.weekEndDay > now && rangeIn) return point;
+            if (point.weekEndDay <= now) rangeIn = true;
+        }
+        return null;
+    }
 
     public rewirteOf(point: PointOfWeek): BarndownChart {
         const modifiedPoints = this.points

@@ -3,15 +3,15 @@ import Point from "../trello/card/Point";
 
 export default class PointOfWeek {
     constructor(
-        public readonly cellPsition: CellPosition,
+        public readonly cellPosition: CellPosition,
         public readonly weekEndDay: Date,
         public readonly point: Point,
-        private readonly edited: boolean
+        public readonly edited: boolean
     ) { }
 
     public modify(point: Point): PointOfWeek{
         return new PointOfWeek(
-            this.cellPsition,
+            this.cellPosition,
             this.weekEndDay,
             point,
             true

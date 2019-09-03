@@ -1,5 +1,5 @@
-import ListNames from "../model/trello/list/ListNames";
-import ListName from "../model/trello/list/ListName";
+import ListNames from "../../model/trello/list/ListNames";
+import ListName from "../../model/trello/list/ListName";
 
 export default class TrelloSettings {
     constructor(
