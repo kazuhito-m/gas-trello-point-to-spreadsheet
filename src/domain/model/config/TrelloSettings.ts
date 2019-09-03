@@ -9,7 +9,7 @@ export default class TrelloSettings {
         private readonly todoListNames: string
     ) { }
 
-    public pontTargetlistNames(): ListNames {
+    public pointTargetlistNames(): ListNames {
         const names = this.todoListNames
             .split(',')
             .map(i => new ListName(i));
