@@ -1,4 +1,4 @@
-import ListName from "./ListName";
+import ListName from './ListName';
 
 export default class ListNames {
     constructor(public readonly values: ListName[]) { }

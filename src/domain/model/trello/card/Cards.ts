@@ -1,5 +1,5 @@
-import Card from "./Card";
-import Point from "./Point";
+import Card from './Card';
+import Point from './Point';
 
 export default class Cards {
     constructor(public readonly values: Card[]) { }

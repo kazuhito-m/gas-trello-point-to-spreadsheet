@@ -1,9 +1,9 @@
-import SpreadSheetRepository from "../../../domain/model/googlespread/SpreadSheetRepository";
-import BarndownChart from "../../../domain/model/chart/BarndownChart";
-import SheetId from "../../../domain/model/googlespread/SheetId";
-import PointOfWeek from "../../../domain/model/chart/PointOfWeek";
-import CellPosition from "../../../domain/model/googlespread/CellPosition";
-import Point from "../../../domain/model/trello/card/Point";
+import SpreadSheetRepository from '../../../domain/model/googlespread/SpreadSheetRepository';
+import BarndownChart from '../../../domain/model/chart/BarndownChart';
+import SheetId from '../../../domain/model/googlespread/SheetId';
+import PointOfWeek from '../../../domain/model/chart/PointOfWeek';
+import CellPosition from '../../../domain/model/googlespread/CellPosition';
+import Point from '../../../domain/model/trello/card/Point';
 
 export default class SpreadSheetDatasource implements SpreadSheetRepository {
     public barndwonChartOf(sheetId: SheetId): BarndownChart {
@@ -13,14 +13,14 @@ export default class SpreadSheetDatasource implements SpreadSheetRepository {
         const rows = sheet.getDataRange();
         const maxRows = rows.getNumRows();
         const values = rows.getValues();
-        for (var i = 0; i < maxRows; i++) {
+        for (let i = 0; i < maxRows; i++) {
             const row = values[i];
             const pos = new CellPosition(i, 1);
             const pointOfWeek = new PointOfWeek(
                 pos,
                 row[0],
                 new Point(row[1]),
-                false
+                false,
             );
             points.push(pointOfWeek);
         }

@@ -1,5 +1,5 @@
-import Cards from "../card/Cards";
-import Point from "../card/Point";
+import Cards from '../card/Cards';
+import Point from '../card/Point';
 
 export default class List {
     constructor(
@@ -10,5 +10,5 @@ export default class List {
 
     public point(): Point {
         return this.cards.point();
-    }  
+    }
 }

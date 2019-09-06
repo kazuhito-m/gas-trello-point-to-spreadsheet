@@ -1,12 +1,12 @@
-import ListNames from "../../model/trello/list/ListNames";
-import ListName from "../../model/trello/list/ListName";
+import ListNames from '../../model/trello/list/ListNames';
+import ListName from '../../model/trello/list/ListName';
 
 export default class TrelloSettings {
     constructor(
         public readonly apiKey: string,
         public readonly apiToken: string,
         public readonly boardId: string,
-        private readonly todoListNames: string
+        private readonly todoListNames: string,
     ) { }
 
     public pointTargetlistNames(): ListNames {

@@ -1,7 +1,7 @@
 export default class CellPosition {
     constructor(
         public readonly row: number,
-        public readonly column: number
+        public readonly column: number,
     ) { }
 
     public adderssKey(): string {

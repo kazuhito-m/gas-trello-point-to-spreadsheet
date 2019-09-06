@@ -1,7 +1,7 @@
-import SheetId from "../googlespread/SheetId";
+import SheetId from '../googlespread/SheetId';
 
 export default class GoogleSpreadSettings {
     constructor(
-        public readonly sheetId: SheetId
+        public readonly sheetId: SheetId,
     ) { }
 }

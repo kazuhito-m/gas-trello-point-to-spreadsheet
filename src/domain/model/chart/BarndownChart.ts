@@ -1,10 +1,10 @@
-import PointOfWeek from "./PointOfWeek";
-import SheetId from "../googlespread/SheetId";
+import PointOfWeek from './PointOfWeek';
+import SheetId from '../googlespread/SheetId';
 
 export default class BarndownChart {
     constructor(
         public readonly points: PointOfWeek[],
-        public readonly sheetId: SheetId
+        public readonly sheetId: SheetId,
     ) { }
 
     public nowWeekPoint(): PointOfWeek {

@@ -1,10 +1,10 @@
-import BoardRepository from "../../../domain/model/trello/BoardRepository";
-import Board from "../../../domain/model/trello/Board";
-import List from "../../../domain/model/trello/list/List";
-import Lists from "../../../domain/model/trello/list/Lists";
-import Cards from "../../../domain/model/trello/card/Cards";
-import Card from "../../../domain/model/trello/card/Card";
-import TrelloSettings from "../../../domain/config/TrelloSettings";
+import BoardRepository from '../../../domain/model/trello/BoardRepository';
+import Board from '../../../domain/model/trello/Board';
+import List from '../../../domain/model/trello/list/List';
+import Lists from '../../../domain/model/trello/list/Lists';
+import Cards from '../../../domain/model/trello/card/Cards';
+import Card from '../../../domain/model/trello/card/Card';
+import TrelloSettings from '../../../domain/config/TrelloSettings';
 
 export default class BoardDatasource implements BoardRepository {
     public getOf(settings: TrelloSettings): Board {
@@ -15,7 +15,7 @@ export default class BoardDatasource implements BoardRepository {
             .map(i => new List(
                 i.id,
                 i.name,
-                this.loadCards(i.id, settings)
+                this.loadCards(i.id, settings),
             ));
         return new Board(new Lists(lists));
     }

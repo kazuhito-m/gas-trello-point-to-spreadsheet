@@ -9,7 +9,7 @@ export default class TrelloPointToSpreadSheetServcie {
     constructor(
         private readonly settingRepository: SettingRepository,
         private readonly boardRepository: BoardRepository,
-        private readonly spreadSheetRepository: SpreadSheetRepository
+        private readonly spreadSheetRepository: SpreadSheetRepository,
     ) { }
 
     public writePoint(): void {
@@ -18,7 +18,7 @@ export default class TrelloPointToSpreadSheetServcie {
         const board = this.boardRepository.getOf(settings.trello);
         const targetLists = board.allLists().findOf(settings.trello.pointTargetlistNames());
         const totalPoint = targetLists.point();
-    
+
         const barndwonChart = this.spreadSheetRepository.barndwonChartOf(settings.googleSpread.sheetId);
         const nowWeekPoint = barndwonChart.nowWeekPoint();
         if (!nowWeekPoint) {

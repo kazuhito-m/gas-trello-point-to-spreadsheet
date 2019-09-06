@@ -8,7 +8,7 @@ export default class GasApplication {
         const service = new TrelloPointToSpreadSheetServcie(
             new SettingDatasource(),
             new BoardDatasource(),
-            new SpreadSheetDatasource()
+            new SpreadSheetDatasource(),
         );
         service.writePoint();
     }
