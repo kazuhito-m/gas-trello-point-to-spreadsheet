@@ -19,6 +19,6 @@ export default class PointOfWeek {
     }
 
     public equals(point: PointOfWeek): boolean {
-        return this.weekEndDay == point.weekEndDay;
+        return this.weekEndDay === point.weekEndDay;
     }
 }

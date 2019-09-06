@@ -30,7 +30,7 @@ export default class SpreadSheetDatasource implements SpreadSheetRepository {
     public register(barndwonChart: BarndownChart): void {
         const modifiedPoints = barndwonChart.points
             .filter(point => point.edited);
-        if (modifiedPoints.length == 0) return;
+        if (modifiedPoints.length === 0) return;
 
         const sheet = this.sheetOf(barndwonChart.sheetId);
         for (const point of modifiedPoints) {

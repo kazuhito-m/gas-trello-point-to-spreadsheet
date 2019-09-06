@@ -5,6 +5,6 @@ export default class ListNames {
 
     public contains(name: string): boolean {
         return this.values
-            .some(item => item.value == name);
+            .some(item => item.value === name);
     }
 }
