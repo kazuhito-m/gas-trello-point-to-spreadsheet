@@ -1,6 +1,6 @@
 {
   "name": "gas-trello-point-to-spreadsheet",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Google App Script to post Trello data(cards point) to GoogleSpreadSheet",
   "main": "src/index.ts",
   "directories": {
@@ -9,7 +9,7 @@
   "scripts": {
     "lint": "tslint -c tslint.json --fix 'src/**/*.ts'",
     "test": "npm run lint && jest",
-    "deploy": "clasp push && clasp deploy"
+    "deploy": "clasp push && clasp deploy --description $npm_package_version"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
   "homepage": "https://github.com/kazuhito-m/gas-trello-point-to-spreadsheet#readme",
   "devDependencies": {
     "@types/google-apps-script": "^0.0.62",
+    "clasp": "^1.0.0",
     "jest": "^24.9.0",
     "jest-cli": "^24.9.0",
     "ts-jest": "^24.1.0",
