@@ -8,17 +8,17 @@ jobs:
     steps:
     - checkout
     - restore_cache:
-      key: npm-cache-{{ checksum "package-lock.json" }}
-    - run:
-      name: npmのライブラリインストール
-      command: npm install
+        key: npm-cache-{{ checksum "package-lock.json" }}
+      - run:
+        name: npmのライブラリインストール
+        command: npm install
     - save_cache:
-      key: npm-cache-{{ checksum "package-lock.json" }}
-      paths:
-        - ./node_modules
+        key: npm-cache-{{ checksum "package-lock.json" }}
+        paths:
+          - ./node_modules
     - run:
-      name: テスト実行
-      command: npm test
+        name: テスト実行
+        command: npm test
 
   deploy:
     docker:
@@ -28,8 +28,8 @@ jobs:
     steps:
     - checkout
     - run:
-      name: ダミー
-      command: echo 'deployはまだしません。'
+        name: ダミー
+        command: echo 'deployはまだしません。'
 
 workflows:
   version: 2
