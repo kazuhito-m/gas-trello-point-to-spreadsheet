@@ -8,27 +8,28 @@ jobs:
     steps:
     - checkout
     - restore_cache:
-        key: npm-cache-{{ checksum "package-lock.json" }}
+      key: npm-cache-{{ checksum "package-lock.json" }}
     - run:
-        name: npmのライブラリインストール
-        commnad: npm install
-    - save_cache: 
-        key: npm-cache-{{ checksum "package-lock.json" }}
-        paths:
-          - ./node_modules
-       - run:
-        name: テスト実行
-        command: npm test
+      name: npmのライブラリインストール
+      command: npm install
+    - save_cache:
+      key: npm-cache-{{ checksum "package-lock.json" }}
+      paths:
+        - ./node_modules
+    - run:
+      name: テスト実行
+      command: npm test
 
-  build_register:
+  deploy:
+    docker:
     - image: circleci/node:9.9.0
       environment:
         TZ: Asia/Tokyo
     steps:
     - checkout
     - run:
-        name: ダミー
-        command: echo 'deployはまだしません。'
+      name: ダミー
+      command: echo 'deployはまだしません。'
 
 workflows:
   version: 2
