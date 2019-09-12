@@ -4,7 +4,7 @@ import List from '../../../domain/model/trello/list/List';
 import Lists from '../../../domain/model/trello/list/Lists';
 import Cards from '../../../domain/model/trello/card/Cards';
 import Card from '../../../domain/model/trello/card/Card';
-import TrelloSettings from '../../../domain/config/TrelloSettings';
+import TrelloSettings from '../../../domain/model/config/TrelloSettings';
 
 export default class BoardDatasource implements BoardRepository {
     public getOf(settings: TrelloSettings): Board {
