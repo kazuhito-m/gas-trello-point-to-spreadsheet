@@ -9,7 +9,7 @@ jobs:
     - checkout
     - restore_cache:
         key: npm-cache-{{ checksum "package-lock.json" }}
-      - run:
+    - run:
         name: npmのライブラリインストール
         command: npm install
     - save_cache:
