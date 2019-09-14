@@ -27,9 +27,21 @@ jobs:
         TZ: Asia/Tokyo
     steps:
     - checkout
+    - restore_cache:
+        key: npm-cache-{{ checksum "package-lock.json" }}
     - run:
-        name: ダミー
-        command: echo 'deployはまだしません。'
+        name: npmのライブラリインストール
+        command: npm install
+    - save_cache:
+        key: npm-cache-{{ checksum "package-lock.json" }}
+        paths:
+          - ./node_modules
+    - run:
+        name: claspの「ログイン状態の設定ファイル」を復元
+        command: echo ${CLASP_LOGGEDIN_FILE_CONTENTS} > ~/.clasprc.json
+    - run:
+        name: GoogleAppScriptとしてデプロイ
+        command: npm run deploy
 
 workflows:
   version: 2
@@ -37,8 +49,8 @@ workflows:
     jobs:
       - test
       - deploy:
-          filters:
-            tags:
-              only: /^[0-9].*/
-            branches:
-              ignore: /.*/
+      #     filters:
+      #       tags:
+      #         only: /^[0-9].*/
+      #       branches:
+      #         ignore: /.*/
