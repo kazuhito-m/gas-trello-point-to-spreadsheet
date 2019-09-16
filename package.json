@@ -1,6 +1,6 @@
 {
   "name": "gas-trello-point-to-spreadsheet",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "Google App Script to post Trello data(cards point) to GoogleSpreadSheet",
   "main": "src/index.ts",
   "directories": {
