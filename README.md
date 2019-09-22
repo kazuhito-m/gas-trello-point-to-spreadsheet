@@ -29,11 +29,20 @@ Trelloの一つのボードのいくつかのリストからポイントを抜�
 
 集計対象のリストは、設定により複数指定することが出来る。
 
-![](./doc/trello/board-view.png)
+![リストの例](./doc/trello/board-view.png)
 
 上記の例では「 `ToDo` と `Doing` を集計対象」のような指定が出来るが「 `Done` の一部だけ集計」などは指定できない。
 
 ### 対象と成るGoogle SpreadSheetの形式
+
+![](./doc/spreadsheet/spread-sample.png)
+
+2行目から、
+
+- 1列目: 日付
+- 2列目: ポイント
+
+と定義したSpreadSheetを用意する。
 
 ## Usage
 
