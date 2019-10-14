@@ -9,10 +9,9 @@ export default class BarndownChart {
 
     public nowWeekPoint(): PointOfWeek {
         const now = new Date();
-        let rangeIn = false;
         let lastOneDayPoint = null;
         for (const point of this.points) {
-            if (point.weekEndDay > now && rangeIn) return lastOneDayPoint;
+            if (point.weekEndDay > now) return lastOneDayPoint;
             lastOneDayPoint = point;
         }
         return lastOneDayPoint;
