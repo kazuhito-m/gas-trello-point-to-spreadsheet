@@ -51,7 +51,7 @@ jobs:
         name: GoogleAppScriptとしてデプロイ
         command: npm run deploy
     - discord/status:
-        fail_only: true
+        fail_only: false
         failure_message: "Triggered by: **${CIRCLE_USERNAME}** \\n\\n デプロイに失敗しました。 JOB: **$CIRCLE_JOB**"
         webhook: "${DISCORD_WEBHOOK}"
 
