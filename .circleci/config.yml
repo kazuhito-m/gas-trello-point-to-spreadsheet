@@ -6,7 +6,7 @@ orbs:
 jobs:
   test:
     docker:
-    - image: circleci/node:9.9.0b
+    - image: cimg/node:19.2.0
       environment:
         TZ: Asia/Tokyo
     steps:
@@ -30,7 +30,7 @@ jobs:
 
   deploy:
     docker:
-    - image: circleci/node:9.9.0
+    - image: cimg/node:19.2.0
       environment:
         TZ: Asia/Tokyo
     steps:
