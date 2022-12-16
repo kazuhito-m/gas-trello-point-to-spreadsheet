@@ -3,6 +3,8 @@ version: 2.1
 orbs:
   discord: antonioned/discord@0.1.0  
 
+
+
 jobs:
   test:
     docker:
@@ -57,10 +59,10 @@ jobs:
 
 workflows:
   version: 2
+  context: kazuhito_m-products
   test:
     jobs:
-      - test:
-          context: kazuhito_m-products
+      - test
   deploy:
     jobs:
       - test:
