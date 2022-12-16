@@ -52,7 +52,7 @@ jobs:
         command: npm run deploy
     - discord/status:
         fail_only: true
-        failure_message: "Triggered User: **${CIRCLE_USERNAME}**\\nBranch: **${CIRCLE_BRANCH}**\\n\\nCircleCI デプロイに失敗しました。 JOB: **$CIRCLE_JOB**"
+        failure_message: "Triggered User: **${CIRCLE_USERNAME}**\\nTag: **${CIRCLE_TAG}**\\n\\nCircleCI デプロイに失敗しました。 JOB: **$CIRCLE_JOB**"
         webhook: "${DISCORD_WEBHOOK}"
 
 workflows:
