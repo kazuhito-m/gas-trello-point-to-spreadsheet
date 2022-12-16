@@ -6,7 +6,7 @@ orbs:
 jobs:
   test:
     docker:
-    - image: circleci/node:9.9.0
+    - image: circleci/node:9.9.0b
       environment:
         TZ: Asia/Tokyo
     steps:
@@ -26,7 +26,7 @@ jobs:
     - discord/status:
         fail_only: true
         failure_message: "Triggered by: **${CIRCLE_USERNAME}** \\n\\n テストに失敗しました。 JOB: **$CIRCLE_JOB**"
-        webhook: "${DISCORD_STATUS_WEBHOOK}"
+        webhook: "${DISCORD_WEBHOOK}"
 
   deploy:
     docker:
@@ -53,7 +53,7 @@ jobs:
     - discord/status:
         fail_only: true
         failure_message: "Triggered by: **${CIRCLE_USERNAME}** \\n\\n デプロイに失敗しました。 JOB: **$CIRCLE_JOB**"
-        webhook: "${DISCORD_STATUS_WEBHOOK}"
+        webhook: "${DISCORD_WEBHOOK}"
 
 workflows:
   version: 2
