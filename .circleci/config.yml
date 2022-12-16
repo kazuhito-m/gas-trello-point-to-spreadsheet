@@ -24,8 +24,8 @@ jobs:
         name: テスト実行
         command: npm test
     - discord/status:
-        fail_only: false
-        failure_message: "Triggered by: **${CIRCLE_USERNAME}** \\n\\n テストに失敗しました。 JOB: **$CIRCLE_JOB**"
+        fail_only: true
+        failure_message: "Project: **${CIRCLE_PROJECT_REPONAME}**\\nTriggered User: **${CIRCLE_USERNAME}**\\n\\nテストに失敗しました。 JOB: **$CIRCLE_JOB**"
         webhook: "${DISCORD_WEBHOOK}"
 
   deploy:
@@ -51,8 +51,8 @@ jobs:
         name: GoogleAppScriptとしてデプロイ
         command: npm run deploy
     - discord/status:
-        fail_only: false
-        failure_message: "Triggered by: **${CIRCLE_USERNAME}** \\n\\n デプロイに失敗しました。 JOB: **$CIRCLE_JOB**"
+        fail_only: true
+        failure_message: "Project: **${CIRCLE_PROJECT_REPONAME}**\\nTriggered User: **${CIRCLE_USERNAME}**\\n\\nデプロイに失敗しました。 JOB: **$CIRCLE_JOB**"
         webhook: "${DISCORD_WEBHOOK}"
 
 workflows:
