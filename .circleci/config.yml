@@ -24,7 +24,7 @@ jobs:
         name: テスト実行
         command: npm test
     - discord/status:
-        fail_only: true
+        fail_only: false
         failure_message: "Triggered by: **${CIRCLE_USERNAME}** \\n\\n テストに失敗しました。 JOB: **$CIRCLE_JOB**"
         webhook: "${DISCORD_WEBHOOK}"
 
