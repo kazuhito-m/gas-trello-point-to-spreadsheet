@@ -62,7 +62,9 @@ workflows:
   context: kazuhito_m-products
   test:
     jobs:
-      - test
+      - test:
+          context: kazuhito_m-products
+
   deploy:
     jobs:
       - test:
