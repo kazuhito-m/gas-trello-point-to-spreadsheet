@@ -16,10 +16,12 @@ export default class TrelloPointToSpreadSheetServcie {
         const settings = this.settingRepository.get();
 
         const board = this.boardRepository.getOf(settings.trello);
-        const targetLists = board.allLists().findOf(settings.trello.pointTargetlistNames());
+        const targetLists = board.allLists()
+            .findOf(settings.trello.pointTargetlistNames());
         const totalPoint = targetLists.point();
 
-        const barndwonChart = this.spreadSheetRepository.barndwonChartOf(settings.googleSpread.sheetId);
+        const barndwonChart = this.spreadSheetRepository
+            .barndwonChartOf(settings.googleSpread.sheetId);
         const nowWeekPoint = barndwonChart.nowWeekPoint();
         if (!nowWeekPoint) {
             this.log('バーンダウンチャート内に該当する日付がありませんでした。');
