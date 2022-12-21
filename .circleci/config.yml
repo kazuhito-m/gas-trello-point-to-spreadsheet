@@ -3,7 +3,6 @@ version: 2.1
 orbs:
   discord: antonioned/discord@0.1.0  
 
-
 parameters:
   node-docker-image:
     type: string
