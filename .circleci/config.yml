@@ -3,10 +3,16 @@ version: 2.1
 orbs:
   discord: antonioned/discord@0.1.0  
 
+
+parameters:
+  node-docker-image:
+    type: string
+    default: "cimg/node:19.2.0"
+
 jobs:
   test:
     docker:
-    - image: cimg/node:19.2.0
+      - image: << pipeline.parameters.node-docker-image >>
       environment:
         TZ: Asia/Tokyo
     steps:
@@ -30,7 +36,7 @@ jobs:
 
   deploy:
     docker:
-    - image: cimg/node:19.2.0
+      - image: << pipeline.parameters.node-docker-image >>
       environment:
         TZ: Asia/Tokyo
     steps:
